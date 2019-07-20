@@ -38,6 +38,13 @@ class Publisher
     SqlRunner.run(sql, values)
   end
 
+  def self.all()
+    sql = "SELECT * FROM publishers"
+    publishers = SqlRunner.run(sql)
+    result = publishers.map{|publisher| Publisher.new(publisher)}
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM publishers"
     SqlRunner.run(sql)
