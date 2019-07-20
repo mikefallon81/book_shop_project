@@ -15,6 +15,20 @@ class Publisher
     @email = options['email']
   end
 
-  
+  def save()
+    sql = "INSERT INTO publishers(
+    name,
+    street,
+    city,
+    postcode,
+    phone,
+    email
+    )
+    VALUES ($1, $2, $3, $4, $5, $6)
+    RETURNING id;"
+    values = [@name, @street, @city, @postcode, @phone, @email]
+    publisher = SqlRunner.run(sql, values)
+    @id = publisher.first()['id'].to_i
+  end
 
 end

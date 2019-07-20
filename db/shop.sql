@@ -10,7 +10,7 @@ CREATE TABLE publishers(
   street VARCHAR(255),
   city VARCHAR(255),
   postcode VARCHAR(255),
-  phone INT4,
+  phone VARCHAR(255),
   email VARCHAR(255)
 );
 

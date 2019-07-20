@@ -37,7 +37,7 @@ def save()
   genre_id
   )
   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
-  RETURNING id"
+  RETURNING id;"
   values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id]
   product = SqlRunner.run(sql, values)
   @id = product.first()['id'].to_i

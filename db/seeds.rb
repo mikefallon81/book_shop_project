@@ -1,8 +1,10 @@
 require_relative('../models/product.rb')
 require_relative('../models/author.rb')
+require_relative('../models/publisher.rb')
 require('pry-byebug')
 
 # Author.delete_all
+#publisher.delete_all
 # Product.delete_all
 
 author1 = Author.new({
@@ -11,6 +13,17 @@ author1 = Author.new({
   })
 
 author1.save()
+
+publisher1 = Publisher.new({
+  'name' => 'Chapman Publishing Ltd',
+  'street' => '4 Broughton Place',
+  'city' => 'Edinburgh',
+  'phone' => '0131 557 2207',
+  'email' => 'chapman-pub@blueyonder.co.uk'
+  })
+
+publisher1.save()
+
 
 product1 = Product.new({
   'name' => 'CSS: The Missing Manual',
