@@ -27,9 +27,9 @@ class TestProduct < MiniTest::Test
     assert_equal('CSS: The Missing Manual', result)
   end
 
-  # def test_description()
-  #   result = @product.description()
-  #   assert_equal('the book that should have been in the box', result)
-  # end
+  def test_description()
+    result = @product.description()
+    assert_equal('the book that should have been in the box', result)
+  end
 
 end
