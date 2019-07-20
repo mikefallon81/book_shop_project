@@ -6,7 +6,7 @@ class Genre
   attr_accessor :genre_type
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @genre_type = options['genre_type']
   end
 

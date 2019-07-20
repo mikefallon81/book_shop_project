@@ -13,10 +13,10 @@ class TestProduct < MiniTest::Test
       'current_stock' => 10,
       'minimum_stock' => 5,
       'trade_price' => 22.95,
-      'retail_price' => 25.00
-      # 'publisher_id' => '1',
-      # 'author_id' => '1',
-      # 'genre_id' => '1'
+      'retail_price' => 25.00,
+      'publisher_id' => '1',
+      'author_id' => '1',
+      'genre_id' => '1'
     }
 
       @product = Product.new(options)
