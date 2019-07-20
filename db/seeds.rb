@@ -10,7 +10,7 @@ author1 = Author.new({
   'last_name' => 'McFarland'
   })
 
-author1.save
+author1.save()
 
 product1 = Product.new({
   'name' => 'CSS: The Missing Manual',
