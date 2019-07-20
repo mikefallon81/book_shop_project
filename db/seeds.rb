@@ -4,9 +4,10 @@ require_relative('../models/publisher.rb')
 require_relative('../models/genre.rb')
 require('pry-byebug')
 
-# Author.delete_all
-#publisher.delete_all
-# Product.delete_all
+Author.delete_all()
+Publisher.delete_all()
+Genre.delete_all()
+Product.delete_all()
 
 genre1 = Genre.new({
   'genre_type' => 'Technical'

@@ -43,4 +43,9 @@ def save()
   @id = product.first()['id'].to_i
 end
 
+def self.delete_all()
+  sql = "DELETE FROM products"
+  SqlRunner.run(sql)
+end
+
 end
