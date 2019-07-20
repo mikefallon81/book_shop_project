@@ -1,14 +1,14 @@
 require_relative('../db/sql_runner')
 
 attri_reader :id
-attr_accessor :name, :description, :ISBN, :date_published, :current_stock, :minimum_stock, :trade_price, :retail_price, :publisher_id, :author_id, :genre_id 
+attr_accessor :name, :description, :isbn, :date_published, :current_stock, :minimum_stock, :trade_price, :retail_price, :publisher_id, :author_id, :genre_id
 
 
 class Product(options)
   @id = options['id'].to_i
   @name = options['name']
   @description = options['description']
-  @ISBN = options['isbn']
+  @isbn = options['isbn']
   @date_published = options['date_published']
   @current_stock = options['current_stock'].to_i
   @minimum_stock = options['minimum_stock'].to_i
@@ -17,4 +17,26 @@ class Product(options)
   @publisher_id = options['publisher_id'].to_i
   @author_id = options['author_id'].to_i
   @genre_id = options['genre_id'].to_i
+end
+
+
+def save()
+  sql = "INSERT INTO products(
+  name,
+  description,
+  isbn,
+  date_published,
+  current_stock,
+  minimum_stock,
+  trade_price,
+  retail_price,
+  publisher_id,
+  author_id,
+  genre_id
+  )
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+  RETURNING id"
+  values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id]
+  product = SqlRunner.run(sql, values)
+  @id = product.first()['id'].to_i
 end
