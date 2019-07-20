@@ -1,0 +1,7 @@
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('models/authors')
+require_relative('models/genre')
+require_relative('models/product')
+require_relative('models/publisher')
+also_reload( './models/*' )
