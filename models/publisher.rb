@@ -31,6 +31,20 @@ class Publisher
     @id = publisher.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE publishers
+    SET (name,
+    street,
+    city,
+    postcode,
+    phone,
+    email)
+    VALUES ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7;"
+    values = [@name, @street, @city, @postcode, @phone, @email]
+    SqlRunner.run(sql, values)
+  end
+
   def delete()
     sql = "DELETE FROM publishers
     WHERE id = $1"
