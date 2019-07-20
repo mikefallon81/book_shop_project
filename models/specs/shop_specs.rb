@@ -36,4 +36,15 @@ class TestProduct < MiniTest::Test
     result = @product.isbn()
     assert_equal('978-1-491-91805-0', result)
   end
+
+  def test_date_published()
+    result = @product.date_published()
+    assert_equal('01/06/2014', result)
+  end
+
+  # def test_current_stock()
+  #   result = @product.current_stockd()
+  #   assert_equal(10, result)
+  # end
+
 end
