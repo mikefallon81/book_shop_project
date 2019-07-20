@@ -43,6 +43,26 @@ def save()
   @id = product.first()['id'].to_i
 end
 
+  def update()
+    sql = "UPDATE products
+    SET
+    (name,
+    description,
+    isbn,
+    date_published,
+    current_stock,
+    minimum_stock,
+    trade_price,
+    retail_price,
+    publisher_id,
+    author_id,
+    genre_id
+    ) = ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 )
+    WHERE id = $12;"
+    values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id]
+    SqlRunner(sql, values)
+  end
+
   def delete()
     sql = "DELETE FROM products
     WHERE id = $1"
