@@ -28,6 +28,15 @@ class Author
     SqlRunner.run(sql,values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM authors
+    WHERE id = $1"
+    values = [id]
+    authors = SqlRunner.run( sql, values )
+    result = Author.new( author.first )
+    return result
+  end
+
   def self.all()
     sql = "SELECT * FROM authors"
     authors = SqlRunner.run(sql)
