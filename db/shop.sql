@@ -30,7 +30,7 @@ CREATE TABLE products(
   name VARCHAR(255),
   description TEXT,
   ISBN VARCHAR(255),
-  date_published DATE,
+  date_published VARCHAR(255),
   current_stock INT4,
   minimum_stock INT4,
   trade_price FLOAT,
