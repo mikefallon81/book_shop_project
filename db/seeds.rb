@@ -1,10 +1,18 @@
 require_relative('../models/product.rb')
+require_relative('../models/author.rb')
 require('pry-byebug')
 
+# Author.delete_all
 # Product.delete_all
 
+author1 = Author.new({
+  'first_name' => 'David',
+  'last_name' => 'McFarland'
+  })
+
+author1.save
+
 product1 = Product.new({
-  'id' => 1,
   'name' => 'CSS: The Missing Manual',
   'description' => 'the book that should have been in the box',
   'isbn' => '978-1-491-91805-0',
@@ -19,3 +27,7 @@ product1 = Product.new({
   })
 
 product1.save()
+
+
+binding.pry
+nil

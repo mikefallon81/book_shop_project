@@ -14,10 +14,10 @@ class TestProduct < MiniTest::Test
       'minimum_stock' => 5,
       'trade_price' => 22.95,
       'retail_price' => 25.00
+      # 'publisher_id' => '1',
+      # 'author_id' => '1',
+      # 'genre_id' => '1'
     }
-      # 'publisher_id' => 1,
-      # 'author_id' => 1,
-      # 'genre_id' => 1}
 
       @product = Product.new(options)
   end
@@ -61,5 +61,7 @@ class TestProduct < MiniTest::Test
     result = @product.retail_price()
     assert_equal(25.00, result)
   end
+
+
 
 end
