@@ -32,4 +32,8 @@ class TestProduct < MiniTest::Test
     assert_equal('the book that should have been in the box', result)
   end
 
+  def test_isbn()
+    result = @product.isbn()
+    assert_equal('978-1-491-91805-0', result)
+  end
 end
