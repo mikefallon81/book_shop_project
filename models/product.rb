@@ -43,13 +43,20 @@ def save()
   @id = product.first()['id'].to_i
 end
 
-
-
   def delete()
     sql = "DELETE FROM products
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM products
+    WHERE id = $1"
+    values = [id]
+    products = SqlRunner.run( sql, values )
+    result = Product.new( product.first )
+    return result
   end
 
 def self.all()
