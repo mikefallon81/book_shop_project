@@ -42,9 +42,9 @@ class TestProduct < MiniTest::Test
     assert_equal('01/06/2014', result)
   end
 
-  # def test_current_stock()
-  #   result = @product.current_stockd()
-  #   assert_equal(10, result)
-  # end
+  def test_current_stock()
+    result = @product.current_stock()
+    assert_equal(10, result)
+  end
 
 end
