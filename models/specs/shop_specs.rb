@@ -52,4 +52,9 @@ class TestProduct < MiniTest::Test
     assert_equal(5, result)
   end
 
+  def test_trade_price()
+    result = @product.trade_price()
+    assert_equal(22.95, result)
+  end
+
 end
