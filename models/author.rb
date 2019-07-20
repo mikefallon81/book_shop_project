@@ -20,11 +20,19 @@ class Author
     @id = author.first()['id'].to_i
   end
 
+
   def delete()
     sql = "DELETE FROM authors
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql,values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM authors"
+    authors = SqlRunner.run(sql)
+    result = authors.map{|author| Author.new(author)}
+    return result
   end
 
   def self.delete_all()
