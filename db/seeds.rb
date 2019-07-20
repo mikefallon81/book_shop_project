@@ -1,11 +1,18 @@
 require_relative('../models/product.rb')
 require_relative('../models/author.rb')
 require_relative('../models/publisher.rb')
+require_relative('../models/genre.rb')
 require('pry-byebug')
 
 # Author.delete_all
 #publisher.delete_all
 # Product.delete_all
+
+genre1 = Genre.new({
+  'genre_type' => 'Technical'
+  })
+
+genre1.save()
 
 author1 = Author.new({
   'first_name' => 'David',
