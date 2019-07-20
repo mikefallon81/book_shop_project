@@ -1,10 +1,12 @@
 require_relative('../db/sql_runner')
 
-attri_reader :id
+class Product
+
+attr_reader :id
 attr_accessor :name, :description, :isbn, :date_published, :current_stock, :minimum_stock, :trade_price, :retail_price, :publisher_id, :author_id, :genre_id
 
 
-class Product(options)
+def initialize(options)
   @id = options['id'].to_i
   @name = options['name']
   @description = options['description']
@@ -14,9 +16,9 @@ class Product(options)
   @minimum_stock = options['minimum_stock'].to_i
   @trade_price = options['trade_price'].to_f
   @retail_price = options['retail_price'].to_f
-  @publisher_id = options['publisher_id'].to_i
-  @author_id = options['author_id'].to_i
-  @genre_id = options['genre_id'].to_i
+  # @publisher_id = options['publisher_id'].to_i
+  # @author_id = options['author_id'].to_i
+  # @genre_id = options['genre_id'].to_i
 end
 
 
@@ -39,4 +41,6 @@ def save()
   values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id]
   product = SqlRunner.run(sql, values)
   @id = product.first()['id'].to_i
+end
+
 end
