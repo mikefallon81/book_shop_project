@@ -47,4 +47,9 @@ class TestProduct < MiniTest::Test
     assert_equal(10, result)
   end
 
+  def test_minimum_stock()
+    result = @product.minimum_stock()
+    assert_equal(5, result)
+  end
+
 end
