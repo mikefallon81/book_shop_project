@@ -20,6 +20,15 @@ class Author
     @id = author.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE authors
+    SET (first_name, last_name)
+    VALUES ($1, $2)
+    WHERE id = $3;"
+    values = [@first_name, @last_name]
+    SqlRunner.run(sql, values)
+  end
+
 
   def delete()
     sql = "DELETE FROM authors
