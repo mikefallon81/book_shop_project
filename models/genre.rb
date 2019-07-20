@@ -29,6 +29,15 @@ class Genre
     SqlRunner.run(sql,values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM genres
+    WHERE id = $1"
+    values = [id]
+    genres = SqlRunner.run( sql, values )
+    result = Genre.new( genre.first )
+    return result
+  end
+
   def self.all()
     sql = "SELECT * FROM genres"
     genres = SqlRunner.run(sql)
