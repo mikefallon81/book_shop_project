@@ -38,6 +38,15 @@ class Publisher
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM publishers
+    WHERE id = $1"
+    values = [id]
+    publishers = SqlRunner.run( sql, values )
+    result = Publisher.new( publisher.first )
+    return result
+  end
+
   def self.all()
     sql = "SELECT * FROM publishers"
     publishers = SqlRunner.run(sql)
