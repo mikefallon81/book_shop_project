@@ -23,9 +23,9 @@ class Author
   def update()
     sql = "UPDATE authors
     SET (first_name, last_name)
-    VALUES ($1, $2)
+    = ($1, $2)
     WHERE id = $3;"
-    values = [@first_name, @last_name]
+    values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
 

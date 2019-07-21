@@ -95,3 +95,14 @@ post '/author/:id/delete' do
   author.delete
   redirect to '/author'
 end
+
+get '/author/:id/edit' do
+  @author = Author.find(params['id'])
+  erb(:author_edit)
+end
+
+post '/author/:id' do
+  author = Author.new(params)
+  author.update
+  redirect to "/author"
+end
