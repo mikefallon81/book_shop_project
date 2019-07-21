@@ -31,6 +31,25 @@ post '/products' do
   redirect to '/products'
 end
 
+
+get '/products/:id' do
+  @product = Product.find(params[:id])
+  @publisher = Publisher.all
+  @author = Author.all
+  @genre = Genre.all
+  erb(:product_details)
+end
+
+post '/products/:id/delete' do
+  product = Product.find(params['id'])
+  product.delete
+  redirect to '/products'
+end
+
+get '/products/:id/edit' do
+  erb(:update_product)
+end
+
 get '/publisher/new' do
   @publisher = Publisher.all
   erb(:new_publisher)
@@ -39,12 +58,4 @@ end
 post '/publisher' do
   Publisher.new(params).save
   redirect to '/publisher'
-end
-
-get '/products/:id' do
-  @product = Product.find(params[:id])
-  @publisher = Publisher.all
-  @author = Author.all
-  @genre = Genre.all
-  erb(:product_details)
 end
