@@ -56,7 +56,7 @@ class Publisher
     sql = "SELECT * FROM publishers
     WHERE id = $1"
     values = [id]
-    publishers = SqlRunner.run( sql, values )
+    publisher = SqlRunner.run( sql, values )
     result = Publisher.new( publisher.first )
     return result
   end

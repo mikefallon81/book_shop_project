@@ -31,7 +31,6 @@ post '/products' do
   redirect to '/products'
 end
 
-
 get '/products/:id' do
   @product = Product.find(params[:id])
   @publisher = Publisher.all
@@ -57,5 +56,11 @@ end
 
 post '/publisher' do
   Publisher.new(params).save
+  redirect to '/publisher'
+end
+
+post '/publisher/:id/delete' do
+  publisher = Publisher.find(params['id'])
+  publisher.delete
   redirect to '/publisher'
 end

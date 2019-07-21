@@ -13,7 +13,10 @@
 <p>Phone: <%= publisher.phone %></p>
 <p>Email: <%= publisher.email %></p>
 
-<button><a href="">Edit Details</a></button>
-<button><a href="">Delete</a></button>
+
+<form class="" action="/publisher/<%= publisher.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Publisher">
+</form>
+
+
 <hr>
 <% end %>
