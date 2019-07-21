@@ -74,3 +74,8 @@ post '/publisher/:id/delete' do
   publisher.delete
   redirect to '/publisher'
 end
+
+get '/author' do
+  @authors = Author.all
+  erb(:author)
+end
