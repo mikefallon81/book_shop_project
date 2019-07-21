@@ -54,7 +54,7 @@ end
 post '/products/:id' do
   product = Product.new(params)
   product.update
-  redirect to "/product/#{params['id']}"
+  redirect to "/products/#{params['id']}"
 end
 
 #*******PUBLISHER**********

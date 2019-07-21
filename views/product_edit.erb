@@ -9,39 +9,39 @@
   <label for="isbn-field">ISBN:</label>
   <input type="text" name="isbn" value="<%= @product.isbn %>" id="isbn-field">
 
-  <label for="date-published">Date Published:</label>
-  <input type="text" name="date_published" value="<%= @product.date_published %>" id="date-published">
+  <label for="date-published-field">Date Published:</label>
+  <input type="text" name="date_published" value="<%= @product.date_published %>" id="date-published-field">
 
-  <label for="current-stock">Current Stock:</label>
-  <input type="text" name="current_stock" value="<%= @product.current_stock %>" id="current-stock">
+  <label for="current-stock-field">Current Stock:</label>
+  <input type="text" name="current_stock" value="<%= @product.current_stock %>" id="current-stock-field">
 
-  <label for="minimum-stock">Minimum Stock Level</label>
-  <input type="text" name="minimum_stock" value="<%= @product.minimum_stock %>" id="minimum-stock">
+  <label for="minimum-stock-field">Minimum Stock Level</label>
+  <input type="text" name="minimum_stock" value="<%= @product.minimum_stock %>" id="minimum-stock-field">
 
-  <label for="trade=price">Trade Price:</label>
-  <input type="text" name="trade_price" value="<%= @product.trade_price %>" id="">
+  <label for="trade-price-field">Trade Price:</label>
+  <input type="text" name="trade_price" value="<%= @product.trade_price %>" id="trade-price-field">
 
-  <label for="retail-price">Retail Price:</label>
-  <input type="text" name="retail_price" value="<%= @product.retail_price %>" id="retail-price">
+  <label for="retail-price-field">Retail Price:</label>
+  <input type="text" name="retail_price" value="<%= @product.retail_price %>" id="retail-price-field">
 
-  <label for="publisher-id">Publisher:</label>
-  <select class="" name="publisher_id" id="publisher-field">
+  <label for="publisher-id-field">Publisher:</label>
+  <select class="" name="publisher_id" id="publisher-id-field">
   <% @publisher.each do |publisher| %>
 
   <option value="<%= publisher.id %>"><%= publisher.name %></option>
   <% end %>
   </select>
 
-  <label for="author-id">Author:</label>
-  <select class="" name="author_id" id="author-field">
+  <label for="author-id-field">Author:</label>
+  <select class="" name="author_id" id="author-id-field">
   <% @author.each do |author| %>
 
   <option value="<%= author.id %>"><%= author.first_name %></option>
   <% end %>
   </select>
 
-  <label for="genre-id">Genre:</label>
-  <select class="" name="genre_id" id="genre-field">
+  <label for="genre-id-field">Genre:</label>
+  <select class="" name="genre_id" id="genre-id-field">
   <% @genre.each do |genre| %>
 
   <option value="<%= genre.id %>"><%= genre.genre_type %></option>
