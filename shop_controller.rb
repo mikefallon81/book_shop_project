@@ -23,12 +23,17 @@ get '/products/new' do
   @genre = Genre.all
   @author = Author.all
   @publisher = Publisher.all
-  erb(:new)
+  erb(:new_product)
 end
 
 post '/products/' do
   Product.new(params).save
   redirect to '/products'
+end
+
+get 'publisher/new' do
+  @publisher = Publisher.all
+  erb(:new_publisher)
 end
 
 get '/products/:id/view' do
