@@ -23,12 +23,13 @@ class Genre
 
   def update()
     sql = "UPDATE genres
-    SET (genre_type)
-    VALUES ($1)
+    SET genre_type
+    = $1
     WHERE id = $2;"
-    values = [@genre_type]
+    values = [@genre_type, @id]
     SqlRunner.run(sql, values)
   end
+
 
   def delete()
     sql = "DELETE FROM genres

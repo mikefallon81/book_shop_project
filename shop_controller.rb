@@ -131,3 +131,14 @@ post '/genres' do
   Genre.new(params).save
   redirect to '/genres'
 end
+
+get '/genres/:id/edit' do
+  @genre = Genre.find(params['id'])
+  erb(:genre_edit)
+end
+
+post '/genres/:id' do
+  genre = Genre.new(params)
+  genre.update
+  redirect to "/genres"
+end
