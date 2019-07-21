@@ -13,6 +13,10 @@ get '/products' do
 end
 
 #CREATE
-get 'products/new' do
-  @product = Product.new()
+get '/products/new' do
+  @product = Product.new
+  @genre = Genre.all
+  @author = Author.all
+  @publisher = Publisher.all
+  erb(:new)
 end
