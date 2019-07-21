@@ -75,7 +75,7 @@ end
     WHERE id = $1"
     values = [id]
     products = SqlRunner.run( sql, values )
-    result = Product.new( product.first )
+    result = Product.new( products.first )
     return result
   end
 

@@ -26,7 +26,7 @@ post '/products/' do
   redirect to '/products'
 end
 
-get 'products/:id/view' do
+get '/products/:id/view' do
   @product = Product.find(params[:id])
   erb(:product_details)
 end
