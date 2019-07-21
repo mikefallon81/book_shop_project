@@ -14,9 +14,14 @@ end
 
 #CREATE
 get '/products/new' do
-  @product = Product.new
+  @product = Product.all
   @genre = Genre.all
   @author = Author.all
   @publisher = Publisher.all
   erb(:new)
+end
+
+post '/products' do
+  Product.new(params).save
+  redirect to '/products'
 end

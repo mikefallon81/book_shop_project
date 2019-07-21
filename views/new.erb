@@ -1,10 +1,13 @@
-<form class="" action="/products" method="post">
+<form class="" action="/products" method="POST">
 
   <label for="name-field">Product Name</label>
   <input type="text" name="name" value="" id="name-field">
 
   <label for="description-field">Description:</label>
   <input type="text" name="description" value="" id="description-field">
+
+  <label for="isbn-field">ISBN:</label>
+  <input type="text" name="isbn" value="" id="isbn-field">
 
   <label for="date-published">Date Published:</label>
   <input type="text" name="isbn" value="" id="date-published">
@@ -44,6 +47,8 @@
   <option value="<%= genre.id %>"><%= genre.genre_type %></option>
   <% end %>
   </select>
+
+  <input type="submit" name="" value="">
 
 
 </form>
