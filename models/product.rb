@@ -59,8 +59,8 @@ end
     genre_id
     ) = ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 )
     WHERE id = $12;"
-    values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id]
-    SqlRunner(sql, values)
+    values = [@name, @description, @isbn, @date_published, @current_stock, @minimum_stock, @trade_price, @retail_price, @publisher_id, @author_id, @genre_id, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()

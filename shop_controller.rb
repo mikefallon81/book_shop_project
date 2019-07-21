@@ -46,7 +46,17 @@ post '/products/:id/delete' do
 end
 
 get '/products/:id/edit' do
-  erb(:update_product)
+  @publisher = Publisher.all
+  @author = Author.all
+  @genre = Genre.all
+  @product = Product.find(params['id'])
+  erb(:edit_product)
+end
+
+post '/products/:id' do
+  product = Product.new(params)
+  product.update
+  redirect to "/product/#{params['id']}"
 end
 
 get '/publisher/new' do
