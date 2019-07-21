@@ -13,6 +13,7 @@ get '/products' do
 end
 
 
+#*******PRODUCTS**********
 
 #CREATE
 get '/products/new' do
@@ -56,6 +57,7 @@ post '/products/:id' do
   redirect to "/product/#{params['id']}"
 end
 
+#*******PUBLISHER**********
 
 get '/publisher' do
   @publisher = Publisher.all
@@ -77,6 +79,19 @@ post '/publisher/:id/delete' do
   publisher.delete
   redirect to '/publisher'
 end
+
+get '/publisher/:id/edit' do
+  @publisher = Publisher.find(params['id'])
+  erb(:publisher_edit)
+end
+
+post '/publisher/:id' do
+  publisher = Publisher.new(params)
+  publisher.update
+  redirect to "/publisher"
+end
+
+#*******AUTHOR**********
 
 get '/author' do
   @authors = Author.all
@@ -110,6 +125,7 @@ post '/author/:id' do
   redirect to "/author"
 end
 
+#*******GENRES**********
 
 get '/genres' do
   @genres = Genre.all

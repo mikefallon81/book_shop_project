@@ -39,9 +39,9 @@ class Publisher
     postcode,
     phone,
     email)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    = ($1, $2, $3, $4, $5, $6)
     WHERE id = $7;"
-    values = [@name, @street, @city, @postcode, @phone, @email]
+    values = [@name, @street, @city, @postcode, @phone, @email, @id]
     SqlRunner.run(sql, values)
   end
 
