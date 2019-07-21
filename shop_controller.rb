@@ -9,7 +9,7 @@ also_reload( './models/*' )
 #INDEX
 get '/products' do
   @products = Product.all
-  erb(:index)
+  erb(:products)
 end
 
 get '/publisher' do
@@ -23,7 +23,7 @@ get '/products/new' do
   @genre = Genre.all
   @author = Author.all
   @publisher = Publisher.all
-  erb(:new_product)
+  erb(:product_new)
 end
 
 post '/products' do
@@ -50,7 +50,7 @@ get '/products/:id/edit' do
   @author = Author.all
   @genre = Genre.all
   @product = Product.find(params['id'])
-  erb(:edit_product)
+  erb(:product_edit)
 end
 
 post '/products/:id' do
@@ -61,7 +61,7 @@ end
 
 get '/publisher/new' do
   @publisher = Publisher.all
-  erb(:new_publisher)
+  erb(:publisher_new)
 end
 
 post '/publisher' do
