@@ -89,3 +89,9 @@ post '/author' do
   author = Author.new(params).save
   redirect to '/author'
 end
+
+post '/author/:id/delete' do
+  author = Author.find(params['id'])
+  author.delete
+  redirect to '/author'
+end
