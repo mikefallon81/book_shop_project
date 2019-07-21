@@ -1,6 +1,6 @@
 <h2>Genres</h2>
 
-<button><a href="/genre/new">Add Genre</a></button>
+<button><a href="/genres/new">Add Genre</a></button>
 <hr>
 
 <% @genres.each do |genre| %>
@@ -10,9 +10,9 @@
 
 
 
-<a href="/genre/<%= genre.id %>/edit">Edit Genre</a>
+<a href="/genres/<%= genre.id %>/edit">Edit Genre</a>
 
-<form class="" action="/genre/<%= genre.id %>/delete" method="post"><input type="submit" name="delete" value="Delete Genre">
+<form class="" action="/genres/<%= genre.id %>/delete" method="post"><input type="submit" name="delete" value="Delete Genre">
 </form>
 
 <hr>

@@ -12,10 +12,7 @@ get '/products' do
   erb(:products)
 end
 
-get '/publisher' do
-  @publisher = Publisher.all
-  erb(:publisher)
-end
+
 
 #CREATE
 get '/products/new' do
@@ -57,6 +54,12 @@ post '/products/:id' do
   product = Product.new(params)
   product.update
   redirect to "/product/#{params['id']}"
+end
+
+
+get '/publisher' do
+  @publisher = Publisher.all
+  erb(:publisher)
 end
 
 get '/publisher/new' do
@@ -105,4 +108,26 @@ post '/author/:id' do
   author = Author.new(params)
   author.update
   redirect to "/author"
+end
+
+
+get '/genres' do
+  @genres = Genre.all
+  erb(:genres)
+end
+
+post '/genres/:id/delete' do
+  genre = Genre.find(params['id'])
+  genre.delete
+  redirect to '/genres'
+end
+
+get '/genres/new' do
+  @genre = Genre.all
+  erb(:genre_new)
+end
+
+post '/genres' do
+  Genre.new(params).save
+  redirect to '/genres'
 end

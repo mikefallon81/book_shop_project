@@ -42,7 +42,7 @@ class Genre
     WHERE id = $1"
     values = [id]
     genres = SqlRunner.run( sql, values )
-    result = Genre.new( genre.first )
+    result = Genre.new( genres.first )
     return result
   end
 
