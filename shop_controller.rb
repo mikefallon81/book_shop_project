@@ -79,3 +79,13 @@ get '/author' do
   @authors = Author.all
   erb(:author)
 end
+
+get '/author/new' do
+  @author = Author.all
+  erb(:author_new)
+end
+
+post '/author' do
+  author = Author.new(params).save
+  redirect to '/author'
+end
