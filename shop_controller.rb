@@ -12,7 +12,7 @@ get '/products' do
   erb(:index)
 end
 
-get '/products/publisher' do
+get '/publisher' do
   @publisher = Publisher.all
   erb(:publisher)
 end
@@ -26,17 +26,22 @@ get '/products/new' do
   erb(:new_product)
 end
 
-post '/products/' do
+post '/products' do
   Product.new(params).save
   redirect to '/products'
 end
 
-get 'publisher/new' do
+get '/publisher/new' do
   @publisher = Publisher.all
   erb(:new_publisher)
 end
 
-get '/products/:id/view' do
+post '/publisher' do
+  Publisher.new(params).save
+  redirect to '/publisher'
+end
+
+get '/products/:id' do
   @product = Product.find(params[:id])
   @publisher = Publisher.all
   @author = Author.all

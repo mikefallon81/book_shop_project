@@ -2,7 +2,7 @@
 
 
 
-<button><a href="products/new"></a>Add Product</button>
+<button><a href="/products/new"></a>Add Product</button>
 <hr>
 
 
@@ -11,6 +11,6 @@
 <p>Book Name: <%= product.name %></p>
 <p>ISBN: <%=product.isbn  %></p>
 <p>Stock Level: <%= product.current_stock %></p>
-<button><a href="products/<%= product.id %>/view">View Details</a></button>
+<button><a href="products/<%= product.id %>">View Details</a></button>
 <hr>
 <% end %>
