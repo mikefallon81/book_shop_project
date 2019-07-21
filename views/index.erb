@@ -4,11 +4,13 @@
 
 <button><a href="products/new"></a>Add Product</button>
 <hr>
+
+
 <% @products.each do |product| %>
 <p>Book ID: <%= product.id %></p>
 <p>Book Name: <%= product.name %></p>
 <p>ISBN: <%=product.isbn  %></p>
 <p>Stock Level: <%= product.current_stock %></p>
-<button>View Details</button>
+<button><a href="products/<%= product.id %>/view">View Details</a></button>
 <hr>
 <% end %>
