@@ -28,5 +28,8 @@ end
 
 get '/products/:id/view' do
   @product = Product.find(params[:id])
+  @publisher = Publisher.all
+  @author = Author.all
+  @genre = Genre.all
   erb(:product_details)
 end

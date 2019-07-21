@@ -1,1 +1,22 @@
 <h2>Product Details</h2>
+
+
+<div id="product_info">
+<p>Book ID: <%= @product.id %></p>
+<p>Description: <%= @product.description %></p>
+<p>ISGN: <%= @product.isbn %></p>
+<p>Date Published: <%= @product.date_published %></p>
+<p>Publisher: <%= @product.publisher_id %></p>
+<p>Author: <%= @product.author_id %></p>
+</div>
+
+<div id="stock_info">
+  <p>Current Stock: <%= @product.current_stock %></p>
+  <p>Minimum Stock Level: <%= @product.minimum_stock %></p>
+
+<div id="finance">
+  <p>Trade Price: <%= @product.trade_price %></p>
+  <p>Retail Price <%= @product.retail_price %></p>
+</div>
+
+</div>
