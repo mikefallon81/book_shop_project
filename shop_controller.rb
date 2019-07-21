@@ -12,6 +12,11 @@ get '/products' do
   erb(:index)
 end
 
+get '/products/publisher' do
+  @publisher = Publisher.all
+  erb(:publisher)
+end
+
 #CREATE
 get '/products/new' do
   @product = Product.all

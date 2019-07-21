@@ -1,0 +1,21 @@
+<h2>Publishers</h2>
+
+
+
+<button><a href="products/new"></a>Add Publisher</button>
+<hr>
+
+
+<% @publisher.each do |publisher| %>
+<p>Publisher ID: <%= publisher.id %></p>
+<p>Publisher Name: <%= publisher.name %></p>
+<p>Street: <%=publisher.street  %></p>
+<p>City: <%= publisher.city %></p>
+<p>Postcode: <%= publisher.postcode %></p>
+<p>Phone: <%= publisher.phone %></p>
+<p>Email: <%= publisher.email %></p>
+
+<button><a href="">Edit Details</a></button>
+<button><a href="">Delete</a></button>
+<hr>
+<% end %>
