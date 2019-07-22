@@ -1,0 +1,25 @@
+table {
+  width: 90%;
+  font-size: 18px;
+  display: inline-table;
+}
+
+th {
+  padding: 5px;
+  border-style:solid;
+  background-color: grey;
+}
+
+td {
+  padding: 5px;
+  border-style:solid;
+
+}
+
+.add_btn {
+  display:
+}
+
+.text-center {
+  text-align: center;
+}

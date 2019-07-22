@@ -1,8 +1,8 @@
-<h2>Products</h2>
+<h2 class="text-center">Products</h2>
 
 
 
-<button><a href="/products/new">Add Product</a></button>
+<button class="add_btn"><a href="/products/new">Add Product</a></button>
 <hr>
 
 <table>
@@ -24,14 +24,14 @@
     <td><%= product.id %></td>
     <td><%= product.name %></td>
     <td><%=product.isbn  %></td>
-    <td><%= product.current_stock %></td>
-    <td><%= product.minimum_stock %></td>
+    <td class='text-center'><%= product.current_stock %></td>
+    <td class='text-center'><%= product.minimum_stock %></td>
     <td><%= product.author.first_name%></td>
     <td><%= product.genre.genre_type %></td>
-    <td><%= product.trade_price.round(2) %></td>
-    <td><%= product.retail_price.round(2) %></td>
-    <td><%= (((product.retail_price -= product.trade_price) / product.trade_price) * 100).round(2)%>%</td>
-    <td><a href="products/<%= product.id %>">View Details</a></td>
+    <td class='text-center'><%= product.trade_price.round(2) %></td>
+    <td class='text-center'><%= product.retail_price.round(2) %></td>
+    <td class='text-center'><%= (((product.retail_price -= product.trade_price) / product.trade_price) * 100).round(2)%>%</td>
+    <td class='text-center'><a href="products/<%= product.id %>">View Details</a></td>
 
 </tr>
 <% end %>
