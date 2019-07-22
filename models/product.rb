@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner')
+require_relative('./author')
+require_relative('./genre')
+require_relative('./publisher')
 
 class Product
 
@@ -44,21 +47,21 @@ def save()
 end
 
 def author
-    "SELECT * FROM authors
+    sql = "SELECT * FROM authors
     WHERE ID = $1"
     results = SqlRunner.run(sql, [@author_id])
     return Author.new(results.first)
 end
 
 def publisher
-    "SELECT * FROM publishers
+    sql = "SELECT * FROM publishers
     WHERE ID = $1"
     results = SqlRunner.run(sql, [@publisher_id])
     return Publisher.new(results.first)
 end
 
 def genre
-    "SELECT * FROM genres
+    sql = "SELECT * FROM genres
     WHERE ID = $1"
     results = SqlRunner.run(sql, [@genre_id])
     return Genre.new(results.first)
@@ -90,6 +93,7 @@ end
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
 
   def self.stock_warning()
     sql = "SELECT * FROM products
