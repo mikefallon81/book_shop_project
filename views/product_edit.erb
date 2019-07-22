@@ -24,28 +24,31 @@
   <label for="retail-price-field">Retail Price:</label>
   <input type="text" name="retail_price" value="<%= @product.retail_price %>" id="retail-price-field">
 
-  <label for="publisher_select">Publisher:</label>
-  <select name="publisher_id" id="publisher_select" selected="<%= @product.publisher_id  %>">
-    <%@publisher.each do |publisher|%>
-      <% if publisher.id == @product.publisher_id %>
-      <option value=<% publisher.id %> selected><%= publisher.name.capitalize %></option>
-    <% else %>
-      <option value=<% publisher.id %><%= publisher.name.capitalize %></option>
-      <% end %>
-    <% end %>
-    </select>
+  
 
-    <label for="author_select">Author:</label>
-    <select name="author_id" id="author_select" selected="<%= @product.author_id  %>">
-      <%@author.each do |author|%>
-        <% if author.id == @product.author_id %>
-        <option value=<% author.id %> selected><%= author.first_name.capitalize %></option>
-      <% else %>
-        <option value=<% author.id %><%= author.first_name.capitalize %></option>
+    <label for="publisher_select">Publisher:</label>
+    <select name="publisher_id" id="publisher_select">
+      <%@publisher.each do |publisher|%>
+
+        <option value="<%= publisher.id %>"
+          <%= "selected" if publisher.id == @product.publisher_id %>>
+          <%= publisher.name %>
+          </option>
         <% end %>
-      <% end %>
+
       </select>
 
+      <label for="author_select">Author:</label>
+      <select name="author_id" id="author_select">
+        <%@author.each do |author|%>
+
+          <option value="<%= author.id %>"
+            <%= "selected" if author.id == @product.author_id %>>
+            <%= author.first_name %>
+            </option>
+          <% end %>
+
+        </select>
 
       <label for="genre_select">Genre:</label>
       <select name="genre_id" id="genre_select">
@@ -58,11 +61,6 @@
           <% end %>
 
         </select>
-
-
-
-
-
   <input type="submit" name="" value="Update Product">
 
 
