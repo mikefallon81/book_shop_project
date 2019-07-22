@@ -1,0 +1,9 @@
+<h2>Stock Level Warnings</h2>
+
+<% @product.each do |product| %>
+<p>ID: <%= product.id %></p>
+<p>Product Name: <%= product.name %></p>
+<p>Current Stock: <%=product.current_stock  %></p>
+
+<hr>
+<% end %>

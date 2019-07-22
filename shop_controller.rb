@@ -158,3 +158,9 @@ post '/genres/:id' do
   genre.update
   redirect to "/genres"
 end
+
+#*******STOCK LEVELS**********
+get '/stock_warning' do
+  @product = Product.stock_warning
+  erb(:stock_warning)
+end

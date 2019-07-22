@@ -70,6 +70,14 @@ end
     SqlRunner.run(sql, values)
   end
 
+  def self.stock_warning()
+    sql = "SELECT * FROM products
+    WHERE current_stock <= minimum_stock"
+    stock_warning = SqlRunner.run(sql)
+    result = stock_warning.map{|product| Product.new(product)}
+    return result
+  end
+
   def self.find(id)
     sql = "SELECT * FROM products
     WHERE id = $1"
