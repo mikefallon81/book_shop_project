@@ -35,7 +35,7 @@ CREATE TABLE products(
   minimum_stock INT4,
   trade_price FLOAT,
   retail_price FLOAT,
-  publisher_id INT4 REFERENCES publishers(id) ON DELETE CASCADE,
-  author_id INT4 REFERENCES authors(id) ON DELETE CASCADE,
-  genre_id INT4 REFERENCES genres(id) ON DELETE CASCADE
+  publisher_id INT4 REFERENCES publishers(id),
+  author_id INT4 REFERENCES authors(id),
+  genre_id INT4 REFERENCES genres(id)
 );
