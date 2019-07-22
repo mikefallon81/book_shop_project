@@ -1,29 +1,39 @@
+
+<section>
 <form class="" action="/products" method="POST">
-
-  <label for="name-field">Product Name</label>
-  <input type="text" name="name" value="" id="name-field">
-
-  <label for="description-field">Description:</label>
-  <input type="text" name="description" value="" id="description-field">
-
-  <label for="isbn-field">ISBN:</label>
-  <input type="text" name="isbn" value="" id="isbn-field">
-
-  <label for="date-published">Date Published:</label>
-  <input type="text" name="date_published" value="" id="date-published">
-
-  <label for="current-stock">Current Stock:</label>
-  <input type="text" name="current_stock" value="" id="current-stock">
-
-  <label for="minimum-stock">Minimum Stock Level</label>
-  <input type="text" name="minimum_stock" value="" id="minimum-stock">
-
+  <p>
+    <label for="name-field">Product Name</label>
+    <input type="text" name="name" value="" id="name-field">
+  </p>
+  <p>
+    <label for="description-field">Description:</label>
+    <input type="text" name="description" value="" id="description-field">
+  </p>
+  <p>
+    <label for="isbn-field">ISBN:</label>
+    <input type="text" name="isbn" value="" id="isbn-field">
+  </p>
+  <p>
+    <label for="date-published">Date Published:</label>
+    <input type="text" name="date_published" value="" id="date-published">
+  </p>
+  <p>
+    <label for="current-stock">Current Stock:</label>
+    <input type="text" name="current_stock" value="" id="current-stock">
+  </p>
+  <p>
+    <label for="minimum-stock">Minimum Stock Level</label>
+    <input type="text" name="minimum_stock" value="" id="minimum-stock">
+  </p>
+  <p>
   <label for="trade=price">Trade Price:</label>
   <input type="text" name="trade_price" value="" id="">
-
+  </p>
+  <p>
   <label for="retail-price">Retail Price:</label>
   <input type="text" name="retail_price" value="" id="retail-price">
-
+  </p>
+  <p>
   <label for="publisher-id">Publisher:</label>
   <select class="" name="publisher_id" id="publisher-field">
   <% @publisher.each do |publisher| %>
@@ -31,7 +41,8 @@
   <option value="<%= publisher.id %>"><%= publisher.name %></option>
   <% end %>
   </select>
-
+  </p>
+    <p>
   <label for="author-id">Author:</label>
   <select class="" name="author_id" id="author-field">
   <% @author.each do |author| %>
@@ -39,7 +50,8 @@
   <option value="<%= author.id %>"><%= author.first_name %></option>
   <% end %>
   </select>
-
+  </p>
+  <p>
   <label for="genre-id">Genre:</label>
   <select class="" name="genre_id" id="genre-field">
   <% @genre.each do |genre| %>
@@ -47,8 +59,10 @@
   <option value="<%= genre.id %>"><%= genre.genre_type %></option>
   <% end %>
   </select>
-
-  <input type="submit" name="" value="Save Product">
-
+  </p>
+  <p>
+  <input class="submit_btn" type="submit" name="" value="Save Product">
+</p>
 
 </form>
+</section>
