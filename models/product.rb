@@ -3,6 +3,7 @@ require_relative('./author')
 require_relative('./genre')
 require_relative('./publisher')
 
+
 class Product
 
 attr_reader :id
@@ -101,6 +102,10 @@ end
     stock_warning = SqlRunner.run(sql)
     result = stock_warning.map{|product| Product.new(product)}
     return result
+  end
+
+  def format_name
+    return "#{@author.first_name.capitalize} #{@author.last_name.capitalize}"
   end
 
   def self.find(id)
