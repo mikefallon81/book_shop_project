@@ -3,21 +3,33 @@
 <button><a href="/publisher/new">Add Publisher</a></button>
 <hr>
 
-
+<table>
+<tr>
+<th>Publisher ID</th>
+<th>Publisher Name</th>
+<th>Street:</th>
+<th>City</th>
+<th>Postcode</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
 <% @publisher.each do |publisher| %>
-<p>Publisher ID: <%= publisher.id %></p>
-<p>Publisher Name: <%= publisher.name %></p>
-<p>Street: <%=publisher.street  %></p>
-<p>City: <%= publisher.city %></p>
-<p>Postcode: <%= publisher.postcode %></p>
-<p>Phone: <%= publisher.phone %></p>
-<p>Email: <%= publisher.email %></p>
+<tr>
+  <td><%= publisher.id %></td>
+  <td><%= publisher.name %></td>
+  <td><%=publisher.street  %></td>
+  <td><%= publisher.city %></td>
+  <td><%= publisher.postcode %></td>
+  <td><%= publisher.phone %></td>
+  <td><%= publisher.email %></td>
+  <td><a href="/publisher/<%= publisher.id %>/edit">Edit</a></td>
+  <td><form class="" action="/publisher/<%= publisher.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete">
+  </form></td>
+</tr>
 
-<button><a href="/publisher/<%= publisher.id %>/edit">Edit Publisher</a></button>
-
-<form class="" action="/publisher/<%= publisher.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Publisher">
-</form>
 
 
-<hr>
 <% end %>
+</table>
