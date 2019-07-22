@@ -63,9 +63,9 @@ product1 = Product.new({
   'minimum_stock' => 5,
   'trade_price' => 22.95,
   'retail_price' => 25.00,
-  'publisher_id' => publisher2.id,
-  'author_id' => author2.id,
-  'genre_id' => genre2.id
+  'publisher_id' => publisher1.id,
+  'author_id' => author1.id,
+  'genre_id' => genre1.id
   })
 
 product2 = Product.new({
