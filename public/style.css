@@ -1,5 +1,24 @@
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  display: inline;
+  margin-right: 5px;
+
+}
+
+h1, h2 {
+  display: flex;
+  justify-content: center;
+}
+
+
 table {
-  width: 90%;
+  display: flex;
+  justify-content: center;
   font-size: 18px;
   display: inline-table;
 }
