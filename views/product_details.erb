@@ -6,9 +6,9 @@
 <p>Description: <%= @product.description %></p>
 <p>ISGN: <%= @product.isbn %></p>
 <p>Date Published: <%= @product.date_published %></p>
-<p>Publisher: <%= @product.publisher_id %></p>
-<p>Author: <%= @product.author_id %></p>
-<p>Genre: <%= @product.genre.name %></p>
+<p>Publisher: <%= @product.publisher.name %></p>
+<p>Author: <%= @product.author.first_name %></p>
+<p>Genre: <%= @product.genre.genre_type %></p>
 </div>
 
 <div id="stock_info">
