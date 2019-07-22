@@ -114,8 +114,10 @@ class TestProduct < MiniTest::Test
   def test_publisher_email
     assert_equal('chapman-pub@blueyonder.co.uk', @publisher.email)
   end
-  
 
+  def test_formatted_name
+    assert_equal('Irvine Welsh', @product.format_name)
+  end
 
 
 end
