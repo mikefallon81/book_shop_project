@@ -10,7 +10,11 @@
 <p>Book ID: <%= product.id %></p>
 <p>Book Name: <%= product.name %></p>
 <p>ISBN: <%=product.isbn  %></p>
-<p>Stock Level: <%= product.current_stock %></p>
+<p>Current Stock: <%= product.current_stock %></p>
+<p>Min Stock Level: <%= product.minimum_stock %></p>
+<p>Trade Price: <%= product.trade_price %></p>
+<p>Retail Price: <%= product.retail_price %></p>
+<p>Markup: <%= (((product.retail_price -= product.trade_price) % product.trade_price) * 100)%></p>
 <button><a href="products/<%= product.id %>">View Details</a></button>
 <hr>
 <% end %>
