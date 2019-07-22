@@ -6,14 +6,16 @@ require_relative('models/product')
 require_relative('models/publisher')
 also_reload( './models/*' )
 
+
+
+
+#*******PRODUCTS**********
+
 #INDEX
 get '/products' do
   @products = Product.all
   erb(:products)
 end
-
-
-#*******PRODUCTS**********
 
 #CREATE
 get '/products/new' do

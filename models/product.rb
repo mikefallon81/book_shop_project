@@ -43,6 +43,27 @@ def save()
   @id = product.first()['id'].to_i
 end
 
+def author
+    "SELECT * FROM authors
+    WHERE ID = $1"
+    results = SqlRunner.run(sql, [@author_id])
+    return Author.new(results.first)
+end
+
+def publisher
+    "SELECT * FROM publishers
+    WHERE ID = $1"
+    results = SqlRunner.run(sql, [@publisher_id])
+    return Publisher.new(results.first)
+end
+
+def genre
+    "SELECT * FROM genres
+    WHERE ID = $1"
+    results = SqlRunner.run(sql, [@genre_id])
+    return Genre.new(results.first)
+end
+
   def update()
     sql = "UPDATE products
     SET
