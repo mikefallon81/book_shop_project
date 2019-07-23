@@ -139,12 +139,6 @@ end
     return result
   end
 
-
-
-  def format_name
-    return "#{@author.first_name.capitalize} #{@author.last_name.capitalize}"
-  end
-
   def stock_increase(amount)
     @current_stock += amount
     sql = "UPDATE products
