@@ -2,18 +2,25 @@
 
 <button><a href="/author/new">Add Author</a></button>
 <hr>
-
+<table>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
 <% @authors.each do |author| %>
-<p>ID: <%= author.id %></p>
-<p>First Name: <%= author.first_name %></p>
-<p>Last Name: <%=author.last_name  %></p>
+  <td><%= author.id %></td>
+  <td><%= author.first_name %></td>
+  <td><%=author.last_name  %></td>
+  <td><button><a href="/author/<%= author.id %>/edit">Edit Author</a></button></td>
+  <td><form class="" action="/author/<%= author.id %>/delete" method="post"><input type="submit" name="delete" value="Delete Author">
+  </form></td>
+  </tr>
+  <% end %>
+
+</table>
 
 
 
-<button><a href="/author/<%= author.id %>/edit">Edit Author</a></button>
-
-<form class="" action="/author/<%= author.id %>/delete" method="post"><input type="submit" name="delete" value="Delete Author">
-</form>
 
 <hr>
-<% end %>
