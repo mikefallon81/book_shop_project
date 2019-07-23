@@ -1,0 +1,38 @@
+<table>
+  <tr>
+    <th>Book ID</th>
+    <th>Book Name</th>
+    <th>ISBN</th>
+    <th>Current Stock</th>
+    <th>Min Stock Level</th>
+    <th>Author</th>
+    <th>Genre</th>
+    <th>Trade Price</th>
+    <th>Retail Price</th>
+    <th>Markup</th>
+    <th>View</th>
+  </tr>
+  <% @publisher.each do |product| %>
+  <tr>
+    <td><%= product.id %></td>
+    <td><%= product.name %></td>
+    <td><%=product.isbn  %></td>
+
+    <% if product.current_stock <= product.minimum_stock %>
+      <td class='red text-center'><%= product.current_stock %></td>
+    <% else %>
+      <td class='text-center'><%= product.current_stock %></td>
+    <% end %>
+
+    <td class='text-center'><%= product.minimum_stock %></td>
+    <td><%= product.author.first_name%></td>
+    <td><%= product.genre.genre_type %></td>
+    <td class='text-center'><%= product.trade_price.round(2) %></td>
+    <td class='text-center'><%= product.retail_price.round(2) %></td>
+    <td class='text-center'><%= (((product.retail_price -= product.trade_price) / product.trade_price) * 100).round(2)%>%</td>
+    <td class='text-center'><a href="products/<%= product.id %>">View Details</a></td>
+
+</tr>
+<% end %>
+
+</table>

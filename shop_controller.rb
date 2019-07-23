@@ -98,9 +98,9 @@ post '/publisher/:id' do
   redirect to "/publisher"
 end
 
-get '/products/:id/filter' do
-
-
+post '/authors/filter' do
+  @publisher = Product.filter_by_genre(params['publisher_id'])
+  erb(:filter_publisher)
 end
 
 #*******AUTHOR**********
