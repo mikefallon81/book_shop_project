@@ -14,6 +14,9 @@ also_reload( './models/*' )
 #INDEX
 get '/products' do
   @products = Product.all
+  @genre = Genre.all
+  @author = Author.all
+  @publisher = Publisher.all
   erb(:products)
 end
 
