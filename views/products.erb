@@ -1,8 +1,32 @@
 <h2 class="text-center">Products</h2>
 
+<h2>Filter Products</h2>
 
+<label for="publisher-id">Publisher:</label>
+<select class="" name="publisher_id" id="publisher-field">
+<% @publisher.each do |publisher| %>
+  <option value="<%= publisher.id %>"><%= publisher.name %></option>
+  <% end %>
+</select>
+<button class="add_btn"><a href="/products/new">Filter</a></button>
 
-<button class="add_btn"><a href="/products/new">Add Product</a></button>
+<label for="author-id">Author:</label>
+<select class="" name="author_id" id="author-field">
+<% @author.each do |author| %>
+  <option value="<%= author.id %>"><%= author.first_name %></option>
+  <% end %>
+</select>
+<button class="add_btn"><a href="/products/new">Filter</a></button>
+
+<label for="genre-id">Genre:</label>
+<select class="" name="genre_id" id="genre-field">
+<% @genre.each do |genre| %>
+
+<option value="<%= genre.id %>"><%= genre.genre_type %></option>
+<% end %>
+</select>
+
+<button class="add_btn"><a href="/products/new">Filter</a></button>
 <hr>
 
 <table>
@@ -30,7 +54,6 @@
     <% else %>
       <td class='text-center'><%= product.current_stock %></td>
     <% end %>
-
 
     <td class='text-center'><%= product.minimum_stock %></td>
     <td><%= product.author.first_name%></td>
