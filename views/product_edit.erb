@@ -1,30 +1,32 @@
-<form class="" action="/products/<%= @product.id %>" method="POST">
+<section class= 'new-prod-form'>
 
+<form class="" action="/products/<%= @product.id %>" method="POST">
+  <br>
   <label for="name-field">Product Name</label>
   <input type="text" name="name" value="<%= @product.name %>" id="name-field">
-
+  <br>
   <label for="description-field">Description:</label>
   <input type="text" name="description" value="<%= @product.description %>" id="description-field">
-
+<br>
   <label for="isbn-field">ISBN:</label>
   <input type="text" name="isbn" value="<%= @product.isbn %>" id="isbn-field">
-
+<br>
   <label for="date-published-field">Date Published:</label>
   <input type="text" name="date_published" value="<%= @product.date_published %>" id="date-published-field">
-
+<br>
   <label for="current-stock-field">Current Stock:</label>
   <input type="text" name="current_stock" value="<%= @product.current_stock %>" id="current-stock-field">
-
+<br>
   <label for="minimum-stock-field">Minimum Stock Level</label>
   <input type="text" name="minimum_stock" value="<%= @product.minimum_stock %>" id="minimum-stock-field">
-
+<br>
   <label for="trade-price-field">Trade Price:</label>
   <input type="text" name="trade_price" value="<%= @product.trade_price %>" id="trade-price-field">
-
+<br>
   <label for="retail-price-field">Retail Price:</label>
   <input type="text" name="retail_price" value="<%= @product.retail_price %>" id="retail-price-field">
+<br>
 
-  
 
     <label for="publisher_select">Publisher:</label>
     <select name="publisher_id" id="publisher_select">
@@ -37,7 +39,7 @@
         <% end %>
 
       </select>
-
+<br>
       <label for="author_select">Author:</label>
       <select name="author_id" id="author_select">
         <%@author.each do |author|%>
@@ -49,7 +51,7 @@
           <% end %>
 
         </select>
-
+<br>
       <label for="genre_select">Genre:</label>
       <select name="genre_id" id="genre_select">
         <%@genre.each do |genre|%>
@@ -61,7 +63,11 @@
           <% end %>
 
         </select>
-  <input type="submit" name="" value="Update Product">
+        <br>
 
+<div class="submit-btn">
+  <input type="submit" name="" value="Update Product">
+</div>
 
 </form>
+</section>

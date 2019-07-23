@@ -1,0 +1,61 @@
+<% if product.current_stock <= product.minimum_stock do %>
+  <td class='red text-center'><%= product.current_stock %></td>
+<% else %>
+  <td class='text-center'><%= product.current_stock %></td>
+<% end %>
+
+
+
+SELECT * FROM author
+WHERE id = $1;
+
+
+get '/author/:id' do
+
+
+end
+
+<form action="/author/<%=@author.id %>/filter" method=POST>
+<label for="author-id">Author:</label>
+<select class="" name="author_id" id="author-field">
+<% @author.each do |author| %>
+  <option value="<%= author.id %>"><%= author.first_name %></option>
+  <% end %>
+</select>
+<button class="add_btn" type="submit">Filter</button>
+</form>
+
+
+<form action="genre/<%= @genre.id %>/filter">
+<label for="genre-id">Genre:</label>
+<select class="" name="genre_id" id="genre_id">
+<% @genre.each do |genre| %>
+
+<option value="<%= genre.id %>"><%= genre.genre_type %></option>
+<% end %>
+</select>
+<button class="add_btn" type="submit">Filter</button>
+</form>
+
+
+
+<form action="/publisher/<%=@publisher.id%>/filter">
+<label for="publisher-id">Publisher:</label>
+<select class="" name="publisher_id" id="publisher-field">
+<% @publisher.each do |publisher| %>
+  <option value="<%= publisher.id %>"><%= publisher.name %></option>
+  <% end %>
+</select>
+<button class="add_btn"><a href="/products/new">Filter</a></button>
+</form>
+
+
+
+
+<% if product.current_stock <= product.minimum_stock && product.current_stock > 0 %>
+  <td class='orange text-center'><%= product.current_stock %></td>
+<% elsif%> product.current_stock == 0
+  <td class='red text-center'><%= product.current_stock %></td>
+<% else%>
+  <td class='text-center'><%= product.current_stock %></td>
+<% end %>

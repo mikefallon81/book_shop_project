@@ -1,9 +1,12 @@
+<div class='row add-btn'>
 <button>
   <a href="/products/new">Add Product</a>
 </button>
+</div>
+
 
 <h2>Filter Products</h2>
-
+<div class="filters">
 <form action="/genres/filter" method="post">
   <label for="genre-id">Genre:</label>
   <select class="" name="genre_id" id="genre_id">
@@ -14,7 +17,10 @@
   </select>
   <button class="add_btn" type="submit">Filter</button>
 </form>
+</div>
 
+<div class=container>
+<div class="filters">
 <form action="/authors/filter" method="post">
   <label for="author-id">Author</label>
   <select class="" name="author_id" id="author_id">
@@ -24,7 +30,9 @@
   </select>
   <button class="add_btn" type="submit">Filter</button>
 </form>
+</div>
 
+<div class="filters">
 <form action="/publisher/filter" method="post">
   <label for="publisher-id">Publisher</label>
   <select class="" name="publisher_id" id="publisher_id">
@@ -35,7 +43,9 @@
   </select>
   <button class="add_btn" type="submit">Filter</button>
 </form>
-
+</div>
+</div>
+</div>
 <hr>
 
 <h2 class="text-center">All Products</h2>

@@ -1,4 +1,4 @@
-<section>
+<section class= 'new-prod-form'>
   <form class="" action="/products" method="POST">
     <p>
       <label for="name-field">Product Name</label>
@@ -6,7 +6,7 @@
     </p>
     <p>
       <label for="description-field">Description:</label>
-      <input type="text" name="description" value="" id="description-field">
+      <textarea name="description" rows="8" cols="80"></textarea>
     </p>
     <p>
       <label for="isbn-field">ISBN:</label>
@@ -58,9 +58,8 @@
           <option value="<%= genre.id %>"><%= genre.genre_type %></option>
         <% end %>
       </select>
-    </p>
-    <p>
-      <input class="submit_btn" type="submit" name="" value="Save Product">
+  <br>
+      <input type="submit" name="" value="Save Product">
     </p>
 
   </form>
