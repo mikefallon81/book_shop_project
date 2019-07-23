@@ -57,6 +57,11 @@ label {
 }
 
 .red {
-  color: red;
+  background-color: red;
+  font-weight: bold;
+}
+
+.orange {
+  background-color: orange;
   font-weight: bold;
 }

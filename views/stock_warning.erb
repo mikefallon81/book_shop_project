@@ -1,6 +1,6 @@
 <h2>Stock Level Warnings</h2>
 
-
+<h3>Low Stock Products</h3>
 
 <table>
 <% @product.each do |product| %>
@@ -9,12 +9,43 @@
   <th>ID</th>
   <th>Product Name</th>
   <th>Current Stock</th>
+  <th>Order Amount</th>
 </tr>
 <tr>
   <td><%= product.id %></td>
   <td><%= product.name %></td>
   <td><%=product.current_stock%></td>
+  <form action="/products/order" method="post" name="order_amount" id="order_amount">
+  <td><input type="number"></td>
+  <td><button type="submit">Submit</button></td>
+  </form>
 </tr>
+
+<% end %>
+
+</table>
+
+
+<h3>Out Of Stock Products</h3>
+<table>
+<% @product1.each do |product| %>
+
+<tr>
+  <th>ID</th>
+  <th>Product Name</th>
+  <th>Current Stock</th>
+  <th>Order Amount</th>
+</tr>
+<tr>
+  <td><%= product.id %></td>
+  <td><%= product.name %></td>
+  <td><%=product.current_stock%></td>
+  <form action="/products/order" method="post" name="order_amount" id="order_amount">
+  <td><input type="number"></td>
+  <td><button type="submit">Submit</button></td>
+  </form>
+</tr>
+
 <% end %>
 
 </table>

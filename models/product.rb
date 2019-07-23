@@ -123,16 +123,35 @@ end
   end
 
 
-  def self.stock_warning()
+  def self.low_stock_warning()
     sql = "SELECT * FROM products
-    WHERE current_stock <= minimum_stock"
+    WHERE (current_stock <= minimum_stock AND current_stock > 0)"
     stock_warning = SqlRunner.run(sql)
     result = stock_warning.map{|product| Product.new(product)}
     return result
   end
 
+  def self.no_stock_warning()
+    sql = "SELECT * FROM products
+    WHERE current_stock = 0"
+    stock_warning = SqlRunner.run(sql)
+    result = stock_warning.map{|product| Product.new(product)}
+    return result
+  end
+
+
+
   def format_name
     return "#{@author.first_name.capitalize} #{@author.last_name.capitalize}"
+  end
+
+  def stock_increase(amount)
+    @current_stock += amount
+    sql = "UPDATE products
+    SET current_stock = $1
+    WHERE id = $2"
+    values = [@id, @current_stock]
+    SqlRunner.run(sql,values)
   end
 
   def self.find(id)

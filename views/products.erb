@@ -60,9 +60,11 @@
       <td><%= product.name %></td>
       <td><%=product.isbn %></td>
 
-      <% if product.current_stock <= product.minimum_stock %>
+      <% if product.current_stock <= product.minimum_stock && product.current_stock > 0 %>
+        <td class='orange text-center'><%= product.current_stock %></td>
+      <% elsif product.current_stock == 0%>
         <td class='red text-center'><%= product.current_stock %></td>
-      <% else %>
+      <% else%>
         <td class='text-center'><%= product.current_stock %></td>
       <% end %>
 
