@@ -62,6 +62,8 @@ post '/products/:id' do
   redirect to "/products/#{params['id']}"
 end
 
+
+
 #*******PUBLISHER**********
 
 get '/publisher' do
@@ -94,6 +96,11 @@ post '/publisher/:id' do
   publisher = Publisher.new(params)
   publisher.update
   redirect to "/publisher"
+end
+
+get '/products/:id/filter' do
+
+
 end
 
 #*******AUTHOR**********
@@ -130,6 +137,12 @@ post '/author/:id' do
   redirect to "/author"
 end
 
+get '/author/:id/filter' do
+
+
+end
+
+
 #*******GENRES**********
 
 get '/genres' do
@@ -158,11 +171,17 @@ get '/genres/:id/edit' do
   erb(:genre_edit)
 end
 
+post '/genres/filter' do
+  @genre = Product.filter_by_genre(params['genre_id'])
+  erb(:filter_genre)
+end
+
 post '/genres/:id' do
   genre = Genre.new(params)
   genre.update
   redirect to "/genres"
 end
+
 
 #*******STOCK LEVELS**********
 get '/stock_warning' do

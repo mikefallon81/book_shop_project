@@ -88,6 +88,15 @@ end
     SqlRunner.run(sql, values)
   end
 
+  def self.filter_by_genre(id)
+    sql = "SELECT * FROM products
+    WHERE genre_id = $1"
+    values = [id]
+    products = SqlRunner.run( sql, values )
+    result = products.map{|product| Product.new(product)}
+    return result
+  end
+
   def delete()
     sql = "DELETE FROM products
     WHERE id = $1"
