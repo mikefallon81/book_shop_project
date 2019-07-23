@@ -62,6 +62,10 @@ post '/products/:id' do
   redirect to "/products/#{params['id']}"
 end
 
+post 'products/order' do
+  product.stock_increase(order_amount)
+  redirect to "/stock_warning"
+end
 
 
 #*******PUBLISHER**********
@@ -185,6 +189,7 @@ end
 
 #*******STOCK LEVELS**********
 get '/stock_warning' do
-  @product = Product.stock_warning
+  @product = Product.low_stock_warning
+  @product1 = Product.no_stock_warning
   erb(:stock_warning)
 end
