@@ -62,7 +62,7 @@ post '/products/:id' do
   redirect to "/products/#{params['id']}"
 end
 
-post 'products/order' do
+post '/products/order' do
   product.stock_increase(order_amount)
   redirect to "/stock_warning"
 end
@@ -97,7 +97,7 @@ get '/publisher/:id/edit' do
 end
 
 post '/publisher/filter' do
-  @publisher = Product.filter_by_genre(params['publisher_id'])
+  @publisher = Product.filter_by_publisher(params['publisher_id'])
   erb(:filter_publisher)
 end
 
@@ -138,7 +138,7 @@ get '/author/:id/edit' do
 end
 
 post '/authors/filter' do
-  @author = Product.filter_by_genre(params['author_id'])
+  @author = Product.filter_by_author(params['author_id'])
   erb(:filter_author)
 end
 
