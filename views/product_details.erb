@@ -1,69 +1,73 @@
 <h2>Product Details</h2>
 
-<div class="container">
-  <img src="" alt="">
-</div>
 
-<div class="container book_details">
-  <table>
-    <tr>
-      <th scope="row">Book ID</th>
-      <td><%= @product.id %></td>
-    </tr>
-    <tr>
-      <th scope="row">Description</th>
-      <td><%= @product.description %></td>
-    </tr>
-    <tr>
-      <th scope="row">ISGN</th>
-      <td><%= @product.isbn %></td>
-    </tr>
-    <tr>
-      <th scope="row">Date Published</th>
-      <td><%= @product.date_published %></td>
-    </tr>
-    <tr>
-      <th scope="row">Publisher</th>
-      <td><%= @product.publisher.name %></td>
-    </tr>
-    <tr>
-      <th scope="row">Author</th>
-      <td><%= @product.author.first_name %></td>
-    </tr>
-    <tr>
-      <th scope="row">Genre</th>
-      <td><%= @product.genre.genre_type %></td>
-    </tr>
-  </table>
-</div
 
 <div class="container">
 
-  <table>
-    <tr>
-      <th scope="row">Current Stock</th>
-      <td><%= @product.current_stock %></td>
-    </tr>
-    <tr>
-      <th scope="row">Minimum Stock Level</th>
-      <td><%= @product.minimum_stock %></td>
-    </tr>
-  </table>
+  <div class="product_image">
+    <img src="" alt="">
+  </div>
 
-  <table class="finance">
-    <tr>
-      <th scope="row">Trade Price</th>
-      <td>£<%= @product.trade_price %></td>
-    </tr>
-    <tr>
-      <th scope="row">Retail Price</th>
-      <td>£<%= @product.retail_price %></td>
-    </tr>
-    <tr>
-      <th scope="row">Product Value</th>
-      <td>£<%= @product.retail_price * @product.current_stock %></td>
-    </tr>
-  </table>
+  <div class="container book_details">
+    <table>
+      <tr>
+        <th scope="row">Book ID</th>
+        <td><%= @product.id %></td>
+      </tr>
+      <tr>
+        <th scope="row">Description</th>
+        <td><%= @product.description %></td>
+      </tr>
+      <tr>
+        <th scope="row">ISGN</th>
+        <td><%= @product.isbn %></td>
+      </tr>
+      <tr>
+        <th scope="row">Date Published</th>
+        <td><%= @product.date_published %></td>
+      </tr>
+      <tr>
+        <th scope="row">Publisher</th>
+        <td><%= @product.publisher.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Author</th>
+        <td><%= @product.author.first_name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Genre</th>
+        <td><%= @product.genre.genre_type %></td>
+      </tr>
+    </table>
+  </div
+
+  <div class="container">
+
+    <table>
+      <tr>
+        <th scope="row">Current Stock</th>
+        <td><%= @product.current_stock %></td>
+      </tr>
+      <tr>
+        <th scope="row">Minimum Stock Level</th>
+        <td><%= @product.minimum_stock %></td>
+      </tr>
+    </table>
+
+    <table class="finance">
+      <tr>
+        <th scope="row">Trade Price</th>
+        <td>£<%= @product.trade_price %></td>
+      </tr>
+      <tr>
+        <th scope="row">Retail Price</th>
+        <td>£<%= @product.retail_price %></td>
+      </tr>
+      <tr>
+        <th scope="row">Product Value</th>
+        <td>£<%= @product.retail_price * @product.current_stock %></td>
+      </tr>
+    </table>
 
 
 </div>
