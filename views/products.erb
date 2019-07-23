@@ -13,6 +13,17 @@
 <button class="add_btn" type="submit">Filter</button>
 </form>
 
+<form action="/authors/filter" method="post">
+<label for="author-id">Genre:</label>
+<select class="" name="author_id" id="author_id">
+<% @author.each do |author| %>
+
+<option value="<%= author.id %>"><%= author.first_name %></option>
+<% end %>
+</select>
+<button class="add_btn" type="submit">Filter</button>
+</form>
+
 
 
 <hr>

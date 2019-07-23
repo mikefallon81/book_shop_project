@@ -97,6 +97,15 @@ end
     return result
   end
 
+  def self.filter_by_author(id)
+    sql = "SELECT * FROM products
+    WHERE author_id = $1"
+    values = [id]
+    products = SqlRunner.run( sql, values )
+    result = products.map{|product| Product.new(product)}
+    return result
+  end
+
   def delete()
     sql = "DELETE FROM products
     WHERE id = $1"
