@@ -96,16 +96,18 @@ get '/publisher/:id/edit' do
   erb(:publisher_edit)
 end
 
+post '/publisher/filter' do
+  @publisher = Product.filter_by_genre(params['publisher_id'])
+  erb(:filter_publisher)
+end
+
 post '/publisher/:id' do
   publisher = Publisher.new(params)
   publisher.update
   redirect to "/publisher"
 end
 
-post '/authors/filter' do
-  @publisher = Product.filter_by_genre(params['publisher_id'])
-  erb(:filter_publisher)
-end
+
 
 #*******AUTHOR**********
 
@@ -135,16 +137,18 @@ get '/author/:id/edit' do
   erb(:author_edit)
 end
 
+post '/authors/filter' do
+  @author = Product.filter_by_genre(params['author_id'])
+  erb(:filter_author)
+end
+
 post '/author/:id' do
   author = Author.new(params)
   author.update
   redirect to "/author"
 end
 
-post '/authors/filter' do
-  @author = Product.filter_by_genre(params['author_id'])
-  erb(:filter_author)
-end
+
 
 
 #*******GENRES**********
