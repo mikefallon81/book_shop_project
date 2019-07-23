@@ -24,7 +24,14 @@
     <td><%= product.id %></td>
     <td><%= product.name %></td>
     <td><%=product.isbn  %></td>
-    <td class='text-center'><%= product.current_stock %></td>
+
+    <% if product.current_stock <= product.minimum_stock %>
+      <td class='red text-center'><%= product.current_stock %></td>
+    <% else %>
+      <td class='text-center'><%= product.current_stock %></td>
+    <% end %>
+
+
     <td class='text-center'><%= product.minimum_stock %></td>
     <td><%= product.author.first_name%></td>
     <td><%= product.genre.genre_type %></td>
