@@ -25,7 +25,7 @@
     <% end %>
 
     <td class='text-center'><%= product.minimum_stock %></td>
-    <td><%= product.author.first_name%></td>
+    <td><%= product.author.first_name%> <%= product.author.last_name %></td>
     <td><%= product.genre.genre_type %></td>
     <td class='text-center'><%= product.trade_price.round(2) %></td>
     <td class='text-center'><%= product.retail_price.round(2) %></td>
