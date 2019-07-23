@@ -48,6 +48,32 @@ publisher2.save()
 publisher3.save()
 publisher4.save()
 
+genre1 = Genre.new({
+  'genre_type' => 'Technical'
+  })
+
+genre2 = Genre.new({
+  'genre_type' => 'Humourous Fiction'
+  })
+
+genre3 = Genre.new({
+  'genre_type' => 'Horror'
+  })
+
+genre4 = Genre.new({
+  'genre_type' => 'Memoirs'
+  })
+
+genre5 = Genre.new({
+  'genre_type' => 'Sports'
+  })
+
+genre1.save()
+genre2.save()
+genre3.save()
+genre4.save()
+genre5.save()
+
 
 
 author1 = Author.new({
@@ -88,31 +114,7 @@ author5.save()
 author6.save()
 
 
-genre1 = Genre.new({
-  'genre_type' => 'Technical'
-  })
 
-genre2 = Genre.new({
-  'genre_type' => 'Humourous Fiction'
-  })
-
-genre3 = Genre.new({
-  'genre_type' => 'Horror'
-  })
-
-genre4 = Genre.new({
-  'genre_type' => 'Memoirs'
-  })
-
-genre4 = Genre.new({
-  'genre_type' => 'Sports'
-  })
-
-genre1.save()
-genre2.save()
-genre3.save()
-genre4.save()
-genre5.save()
 
 
 product1 = Product.new({
@@ -147,11 +149,9 @@ Fast and furious, scabrously funny and weirdly moving, this is a spectacular ret
   'genre_id' => genre2.id
   })
 
-  product2 = Product.new({
+  product3 = Product.new({
     'name' => 'Trainspotting',
-    'description' => 'Choose us. Choose life. Choose mortgage payments; choose washing machines; choose cars; choose sitting oan a couch watching mind-numbing and spirit-crushing game shows, stuffing fuckin junk food intae yir mooth. Choose rotting away, pishing and shiteing yersel in a home, a total fuckin embarrassment tae the selfish, fucked-up brats ye\'ve produced. Choose life.</br>'
-
-
+    'description' => 'Choose us. Choose life. Choose mortgage payments; choose washing machines; choose cars; choose sitting oan a couch watching mind-numbing and spirit-crushing game shows, stuffing fuckin junk food intae yir mooth. Choose rotting away, pishing and shiteing yersel in a home, a total fuckin embarrassment tae the selfish, fucked-up brats ye\'ve produced. Choose life.</br>',
     'isbn' => '978-0099465898',
     'date_published' => '11/07/1994',
     'current_stock' => 10,
@@ -171,7 +171,7 @@ Fast and furious, scabrously funny and weirdly moving, this is a spectacular ret
 
       When Melanie discovers something gruesome in California, which indicates that her husband’s violent past might also be his psychotic present, things start to go very bad, very quickly.
 
-      The Blade Artist is an elegant, electrifying novel – ultra violent but curiously redemptive – and it marks the return of one of modern fiction’s most infamous, terrifying characters, the incendiary Francis Begbie from Trainspotting.</br>'
+      The Blade Artist is an elegant, electrifying novel – ultra violent but curiously redemptive – and it marks the return of one of modern fiction’s most infamous, terrifying characters, the incendiary Francis Begbie from Trainspotting.</br>',
 
 
       'isbn' => '978-1784700553',
@@ -185,12 +185,12 @@ Fast and furious, scabrously funny and weirdly moving, this is a spectacular ret
       'genre_id' => genre2.id
       })
 
-      product4 = Product.new({
+      product5 = Product.new({
         'name' => 'I, Robot: How to Be a Footballer, Book 2t',
         'description' => 'What happens on the pitch is only half the story.<br>
         Being a footballer is not just kicking a ball about with 21 other people on a big grass rectangle. Sometimes being a footballer is about accidentally becoming best mates with Mickey Rourke, or understanding why spitting is considered football\'s most heinous crime.<br>
         In How to be a Footballer, Peter Crouch took us into a world of bad tattoos and even worse haircuts, a world where you\'re on the pitch one minute, spending too much money on a personalised number plate the next. In I, Robot, he lifts the lid even further on the beautiful game. We will learn about Gareth Bale\'s magic beans, the Golden Rhombus of Saturday night entertainment, and why Crouchy\'s dad walks his dog wearing an England tracksuit from 2005.<br>
-        Whether you\'re an armchair expert, or out in the stands every Saturday, crazy for five-a-side or haven\'t put on a pair of boots since school, this is the real inside story of how to be a footballer.</br>'
+        Whether you\'re an armchair expert, or out in the stands every Saturday, crazy for five-a-side or haven\'t put on a pair of boots since school, this is the real inside story of how to be a footballer.</br>',
 
 
         'isbn' => '978-1529104615',
@@ -208,6 +208,7 @@ product1.save()
 product2.save()
 product3.save()
 product4.save()
+product5.save()
 
 
 binding.pry
