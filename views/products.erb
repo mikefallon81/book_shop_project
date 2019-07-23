@@ -19,7 +19,7 @@
   <label for="author-id">Author</label>
   <select class="" name="author_id" id="author_id">
     <% @author.each do |author| %>
-      <option value="<%= author.id %>"><%= author.first_name %></option>
+      <option value="<%= author.id %>"><%= author.first_name %> <%= author.last_name %></option>
     <% end %>
   </select>
   <button class="add_btn" type="submit">Filter</button>
@@ -48,6 +48,7 @@
     <th>Current Stock</th>
     <th>Min Stock Level</th>
     <th>Author</th>
+    <th>Publisher</th>
     <th>Genre</th>
     <th>Trade Price</th>
     <th>Retail Price</th>
@@ -69,7 +70,8 @@
       <% end %>
 
       <td class='text-center'><%= product.minimum_stock %></td>
-      <td><%= product.author.first_name%></td>
+      <td><%= product.author.first_name%> <%= product.author.last_name %></td>
+      <td><%= product.publisher.name %></td>
       <td><%= product.genre.genre_type %></td>
       <td class='text-center'><%= product.trade_price.round(2) %></td>
       <td class='text-center'><%= product.retail_price.round(2) %></td>
