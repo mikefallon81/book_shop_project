@@ -46,7 +46,7 @@
       <select class="" name="author_id" id="author-field">
         <% @author.each do |author| %>
 
-          <option value="<%= author.id %>"><%= author.first_name %></option>
+          <option value="<%= author.id %>"><%= author.first_name %> <%= author.last_name %></option>
         <% end %>
       </select>
     </p>
