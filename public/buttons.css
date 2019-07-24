@@ -3,6 +3,8 @@
   justify-content: center;
   font-size: 12px;
 
+  font-weight: bold;
+
 }
 
 .submit_btn{
@@ -19,4 +21,13 @@
   background-color: red;
   font-weight: bold;
 
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.submit_link {
+  display: flex;
+  justify-content: center;
 }

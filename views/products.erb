@@ -9,7 +9,7 @@
 <div class="filters">
 <form action="/genres/filter" method="post">
   <label for="genre-id">Genre:</label>
-  <select class="" name="genre_id" id="genre_id">
+  <select class="filter_select" name="genre_id" id="genre_id">
     <% @genre.each do |genre| %>
 
       <option value="<%= genre.id %>"><%= genre.genre_type %></option>
@@ -19,11 +19,10 @@
 </form>
 </div>
 
-<div class=container>
 <div class="filters">
 <form action="/authors/filter" method="post">
   <label for="author-id">Author</label>
-  <select class="" name="author_id" id="author_id">
+  <select class="filter_select" name="author_id" id="author_id">
     <% @author.each do |author| %>
       <option value="<%= author.id %>"><%= author.first_name %> <%= author.last_name %></option>
     <% end %>
@@ -35,7 +34,7 @@
 <div class="filters">
 <form action="/publisher/filter" method="post">
   <label for="publisher-id">Publisher</label>
-  <select class="" name="publisher_id" id="publisher_id">
+  <select class="filter_select" name="publisher_id" id="publisher_id">
     <% @publisher.each do |publisher| %>
 
       <option value="<%= publisher.id %>"><%= publisher.name %></option>

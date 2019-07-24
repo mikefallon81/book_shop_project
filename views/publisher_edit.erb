@@ -1,30 +1,33 @@
 <h2>Edit Publisher</h2>
 
 <form class="" action="/publisher/<%= @publisher.id %>" method="POST">
-
+  <div>
   <label for="name-field">Publisher Name</label>
   <input type="text" name="name" value="<%= @publisher.name %>" id="name-field">
-
+  </div>
+  <div>
   <label for="street-field">Street:</label>
   <input type="text" name="street" value="<%= @publisher.street %>" id="street-field">
-
+</div>
+<div>
   <label for="city-field">City:</label>
   <input type="text" name="city" value="<%= @publisher.city %>" id="city-field">
-
+</div>
+<div>
   <label for="postcode-field">Postcode:</label>
   <input type="text" name="postcode" value="<%= @publisher.postcode %>" id="postcode-field">
-
+</div>
+<div>
   <label for="phone-field">Phone:</label>
   <input type="text" name="phone" value="<%= @publisher.phone %>" id="phone-field">
-
+</div>
+<div>
   <label for="email-field">Email</label>
   <input type="text" name="email" value="<%= @publisher.email %>" id="email-field">
-
-
-
-
-
-  <input type="submit" name="" value="Update Publisher">
-
+</div>
+<div>
+  <label for=""></label>
+  <input class="submit" type="submit" name="" value="Update Publisher">
+</div>
 
 </form>

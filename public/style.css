@@ -6,16 +6,19 @@ nav   {
   justify-content: center;
 }
 
+
 li {
   display: inline;
   margin-right: 5px;
 
 }
 
+
 h1, h2, h3 {
   display: flex;
   justify-content: center;
 }
+
 
 
 table {
@@ -46,13 +49,6 @@ td {
 
 }
 
-label {
-  display: inline-block;
-  width: 20em;
-  vertical-align: top;
-  text-align: right;
-  margin-right: 15px;
-}
 
 a {
   font-size: 16px;
@@ -64,11 +60,11 @@ a {
   justify-content: flex-start;
 }
 
-
+/*
 .new-prod-form{
   display: flex;
   justify-content: flex-start;
-}
+} */
 
 
 
@@ -84,4 +80,10 @@ a {
 .orange {
   background-color: orange;
   font-weight: bold;
+}
+
+.filter_select {
+
+  font-size: 16px;
+  margin-bottom: 5px;
 }
