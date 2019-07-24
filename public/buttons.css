@@ -1,0 +1,22 @@
+.add-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+
+}
+
+.submit_btn{
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.delete-btn {
+  font-size: 16px;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  font-weight: bold;
+
+}
