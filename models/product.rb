@@ -144,7 +144,7 @@ end
     sql = "UPDATE products
     SET current_stock = $1
     WHERE id = $2"
-    values = [@id, @current_stock]
+    values = [@current_stock, @id]
     SqlRunner.run(sql,values)
   end
 

@@ -8,7 +8,15 @@ also_reload( './models/*' )
 
 
 
+get '/' do
+  @products = Product.all
+  @genre = Genre.all
+  @author = Author.all
+  @publisher = Publisher.all
+  erb(:"products/index")
+end
 
+#erb(:"folder_name/filename")
 #*******PRODUCTS**********
 
 #INDEX
@@ -17,7 +25,7 @@ get '/products' do
   @genre = Genre.all
   @author = Author.all
   @publisher = Publisher.all
-  erb(:products)
+  erb(:"products/index")
 end
 
 #CREATE
@@ -26,7 +34,7 @@ get '/products/new' do
   @genre = Genre.all
   @author = Author.all
   @publisher = Publisher.all
-  erb(:product_new)
+  erb(:"products/new")
 end
 
 post '/products' do
@@ -39,7 +47,7 @@ get '/products/:id' do
   @publisher = Publisher.all
   @author = Author.all
   @genre = Genre.all
-  erb(:product_details)
+  erb(:"products/details")
 end
 
 post '/products/:id/delete' do
@@ -53,7 +61,7 @@ get '/products/:id/edit' do
   @author = Author.all
   @genre = Genre.all
   @product = Product.find(params['id'])
-  erb(:product_edit)
+  erb(:"products/edit")
 end
 
 post '/products/:id' do
@@ -62,9 +70,25 @@ post '/products/:id' do
   redirect to "/products/#{params['id']}"
 end
 
-post '/products/order' do
-  product.stock_increase(order_amount)
+post '/products/:id/add' do
+  product = Product.find(params['id'].to_i)
+  product.stock_increase(params['order_amount'].to_i)
   redirect to "/stock_warning"
+end
+
+post '/publisher/filter' do
+  @publisher = Product.filter_by_publisher(params['publisher_id'])
+  erb(:"products/filter_publisher")
+end
+
+post '/authors/filter' do
+  @author = Product.filter_by_author(params['author_id'])
+  erb(:"products/filter_author")
+end
+
+post '/genres/filter' do
+  @genre = Product.filter_by_genre(params['genre_id'])
+  erb(:"products/filter_genre")
 end
 
 
@@ -72,12 +96,12 @@ end
 
 get '/publisher' do
   @publisher = Publisher.all
-  erb(:publisher)
+  erb(:"publishers/index")
 end
 
 get '/publisher/new' do
   @publisher = Publisher.all
-  erb(:publisher_new)
+  erb(:"publishers/new")
 end
 
 post '/publisher' do
@@ -93,13 +117,10 @@ end
 
 get '/publisher/:id/edit' do
   @publisher = Publisher.find(params['id'])
-  erb(:publisher_edit)
+  erb(:"publishers/edit")
 end
 
-post '/publisher/filter' do
-  @publisher = Product.filter_by_publisher(params['publisher_id'])
-  erb(:filter_publisher)
-end
+
 
 post '/publisher/:id' do
   publisher = Publisher.new(params)
@@ -113,12 +134,12 @@ end
 
 get '/author' do
   @authors = Author.all
-  erb(:author)
+  erb(:"authors/index")
 end
 
 get '/author/new' do
   @author = Author.all
-  erb(:author_new)
+  erb(:"authors/new")
 end
 
 post '/author' do
@@ -134,13 +155,10 @@ end
 
 get '/author/:id/edit' do
   @author = Author.find(params['id'])
-  erb(:author_edit)
+  erb(:"authors/edit")
 end
 
-post '/authors/filter' do
-  @author = Product.filter_by_author(params['author_id'])
-  erb(:filter_author)
-end
+
 
 post '/author/:id' do
   author = Author.new(params)
@@ -155,7 +173,7 @@ end
 
 get '/genres' do
   @genres = Genre.all
-  erb(:genres)
+  erb(:"genres/index")
 end
 
 post '/genres/:id/delete' do
@@ -166,7 +184,7 @@ end
 
 get '/genres/new' do
   @genre = Genre.all
-  erb(:genre_new)
+  erb(:"genres/new")
 end
 
 post '/genres' do
@@ -176,13 +194,10 @@ end
 
 get '/genres/:id/edit' do
   @genre = Genre.find(params['id'])
-  erb(:genre_edit)
+  erb(:"genres/edit")
 end
 
-post '/genres/filter' do
-  @genre = Product.filter_by_genre(params['genre_id'])
-  erb(:filter_genre)
-end
+
 
 post '/genres/:id' do
   genre = Genre.new(params)
@@ -195,5 +210,5 @@ end
 get '/stock_warning' do
   @product = Product.low_stock_warning
   @product1 = Product.no_stock_warning
-  erb(:stock_warning)
+  erb(:"stock_warnings/index")
 end
