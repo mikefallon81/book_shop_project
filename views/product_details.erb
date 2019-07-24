@@ -1,7 +1,5 @@
 <h2>Product Details</h2>
 
-
-
 <div class="container">
 
   <div class="product_image">
@@ -10,6 +8,10 @@
 
   <div class="table-position full-width">
     <table>
+      <tr>
+        <th scope="row">Title</th>
+        <td><%= @product.name %></td>
+      </tr>
       <tr>
         <th scope="row">Book ID</th>
         <td><%= @product.id %></td>
@@ -32,17 +34,17 @@
       </tr>
       <tr>
         <th scope="row">Author</th>
-        <td><%= @product.author.first_name %> <%= @product.author.last_name %></td>
+        <td><%= @product.author.first_name %>
+          <%= @product.author.last_name %></td>
       </tr>
       <tr>
         <th scope="row">Genre</th>
         <td><%= @product.genre.genre_type %></td>
       </tr>
     </table>
-  </div
-
+  </div>
+  <br>
   <div class="table-position">
-
     <table>
       <tr>
         <th scope="row">Current Stock</th>
@@ -54,6 +56,9 @@
       </tr>
     </table>
 
+  </div>
+  <br>
+  <div class="table-position">
     <table class="finance">
       <tr>
         <th scope="row">Trade Price</th>
@@ -68,14 +73,24 @@
         <td>£<%= @product.retail_price * @product.current_stock %></td>
       </tr>
     </table>
-
+  </div>
 
 </div>
+<br>
+<div class="table-position">
 
-<div class="buttons">
-  <form action="/products/<%= @product.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Product">
-  </form>
+  <table>
+    <tr>
+      <td>
+        <form action="/products/<%= @product.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Product" class="delete-btn">
+        </form>
+      </td>
 
-  <div class="buttons">
-    <a href="/products/<%= @product.id %>/edit">Edit Product</a>
-</div>
+      <td>
+        <form action="">
+          <button><a href="/products/<%= @product.id %>/edit">Edit Product</a></button>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <br><br>

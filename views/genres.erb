@@ -16,9 +16,11 @@
     <td><%= genre.id %></td>
     <td><%= genre.genre_type %></td>
     <td><a href="/genres/<%= genre.id %>/edit">Edit Genre</a></td>
-    <td><form class="" action="/genres/<%= genre.id %>/delete" method="post"><input type="submit" name="delete" value="Delete Genre">
+    <td><form class="" action="/genres/<%= genre.id %>/delete" method="post"><input class="delete-btn" type="submit" name="delete" value="Delete Genre">
     </form></td>
   </tr>
 <% end %>
 </table>
+
 </div>
+<hr>

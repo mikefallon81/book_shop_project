@@ -16,7 +16,7 @@
   <td><%= product.name %></td>
   <td><%=product.current_stock%></td>
   <form action="/products/order" method="post" name="order_amount" id="order_amount">
-  <td><input type="number"></td>
+  <td><button class=""><input type="number"></button></td>
   <td><button type="submit">Submit</button></td>
   </form>
 </tr>
@@ -42,7 +42,7 @@
   <td><%=product.current_stock%></td>
   <form action="/products/order" method="post" name="order_amount" id="order_amount">
   <td><input type="number"></td>
-  <td><button type="submit">Submit</button></td>
+  <td><button type="submit-btn">Submit</button></td>
   </form>
 </tr>
 

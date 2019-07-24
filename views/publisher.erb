@@ -26,8 +26,8 @@
   <td><%= publisher.postcode %></td>
   <td><%= publisher.phone %></td>
   <td><%= publisher.email %></td>
-  <td><a href="/publisher/<%= publisher.id %>/edit">Edit</a></td>
-  <td><form class="" action="/publisher/<%= publisher.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete">
+  <td><button><a href="/publisher/<%= publisher.id %>/edit">Edit</a></button></td>
+  <td><form class="" action="/publisher/<%= publisher.id %>/delete" method="POST"><input class="delete-btn" type="submit" name="delete" value="Delete">
   </form></td>
 </tr>
 
