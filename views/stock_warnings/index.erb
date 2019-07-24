@@ -6,13 +6,11 @@
 <% @product.each do |product| %>
 
 <tr>
-  <th>ID</th>
   <th>Product Name</th>
   <th>Current Stock</th>
   <th>Order Amount</th>
 </tr>
 <tr>
-  <td><%= product.id %></td>
   <td><%= product.name %></td>
   <td><%=product.current_stock%></td>
   <form action="/products/<%= product.id %>/add" method="post" name="order_amount" id="order_amount">

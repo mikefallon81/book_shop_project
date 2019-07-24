@@ -54,7 +54,6 @@
 
 <table>
   <tr>
-    <th>Book ID</th>
     <th>Book Name</th>
     <th>ISBN</th>
     <th>Current Stock</th>
@@ -69,7 +68,6 @@
   </tr>
   <% @products.each do |product| %>
     <tr>
-      <td><%= product.id %></td>
       <td><%= product.name %></td>
       <td><%=product.isbn %></td>
 

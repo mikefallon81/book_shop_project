@@ -8,12 +8,10 @@
 <div class="table-position">
 <table>
   <tr>
-    <th>ID</th>
     <th>First Name</th>
     <th>Last Name</th>
   </tr>
 <% @authors.each do |author| %>
-  <td><%= author.id %></td>
   <td><%= author.first_name %></td>
   <td><%=author.last_name  %></td>
   <td><button><a href="/author/<%= author.id %>/edit">Edit Author</a></button></td>

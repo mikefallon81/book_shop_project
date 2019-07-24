@@ -7,7 +7,6 @@
 
 <table>
 <tr>
-<th>Publisher ID</th>
 <th>Publisher Name</th>
 <th>Street:</th>
 <th>City</th>
@@ -19,7 +18,6 @@
 </tr>
 <% @publisher.each do |publisher| %>
 <tr>
-  <td><%= publisher.id %></td>
   <td><%= publisher.name %></td>
   <td><%=publisher.street  %></td>
   <td><%= publisher.city %></td>
