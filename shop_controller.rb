@@ -47,7 +47,7 @@ get '/products/:id' do
   @publisher = Publisher.all
   @author = Author.all
   @genre = Genre.all
-  erb(:"products/details")
+  erb(:"products/show")
 end
 
 post '/products/:id/delete' do
