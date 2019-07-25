@@ -82,13 +82,12 @@
   <table>
     <tr>
       <td>
-        <form action="/products/<%= @product.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Product" class="delete-btn">
-        </form>
-      </td>
-
-      <td>
         <form action="">
           <button><a href="/products/<%= @product.id %>/edit">Edit Product</a></button>
+        </form>
+      </td>
+      <td>
+        <form action="/products/<%= @product.id %>/delete" method="POST"><input type="submit" name="delete" value="Delete Product" class="delete-btn">
         </form>
       </td>
     </tr>
