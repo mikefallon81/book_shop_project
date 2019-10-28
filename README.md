@@ -8,5 +8,5 @@ createdb book_shop_project
 # Run controller filter in terminal
 ruby shop_controller.rb
 
-#Open Browser
+# Open Browser
 navigate to localhost:4567
